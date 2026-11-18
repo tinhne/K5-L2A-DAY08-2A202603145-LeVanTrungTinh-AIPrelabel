@@ -1,2 +1,3 @@
 step,images,minutes,note
 gold_manual,4,20,gán tay trên CVAT task gold-manual; không dùng AI; thời gian ước lượng ~20 phút
+batch_review,24,30,duyệt 24 ảnh batch trên CVAT task batch-review; thời gian ước lượng ~30 phút 

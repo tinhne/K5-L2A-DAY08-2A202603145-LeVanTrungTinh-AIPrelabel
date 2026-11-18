@@ -1,1 +1,4 @@
 case_id,image,nguon,van_de,quyet_dinh,quy_tac_ghi_vao_guideline,phien_ban_guideline
+CAL-01,img_013,loi_may,"Tuk-tuk bị detector COCO gọi lẫn car/truck hoặc bỏ sót người đi cùng","Giữ một box three_wheeler cho toàn bộ xe và box person riêng nếu thấy >=20% cơ thể","Mục 2: tuk-tuk, xích lô và xe ba gác đều là three_wheeler; người trên xe là person riêng.","v1.1"
+CAL-02,img_020,cau_hoi_mo,"Chưa chốt xe đạp điện/xe máy điện thuộc bicycle hay motorbike","Chọn motorbike khi thấy rõ động cơ hoặc xe tự chạy; bicycle chỉ khi đạp bằng chân","Mục 1: xe có động cơ, pin hoặc tay ga được gán motorbike; xe đạp thường gán bicycle.","v1.1"
+CAL-03,img_026,bay_lot,"Bẫy loose lọt qua review khi box máy gần đúng nhưng còn thừa vùng nền","Không accept chỉ vì conf cao; kiểm bốn cạnh box với vật thật trước khi giữ nguyên","Mục 2: phải quét biên box trước khi chấp nhận; loose box sửa hoặc xoá.","v1.1"
