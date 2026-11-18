@@ -1,4 +1,4 @@
-# Báo cáo Day 08 — <<MSHV - Họ và tên>>
+# Báo cáo Day 08 — 2A202603145 - Lê Văn Trung Tính
 
 > Một file duy nhất cho cả bài (đã gộp recipe, QC và ghi chú cá nhân). Mọi con số kèm **mẫu số** và nguồn (file nào). Viết bằng lời của bạn.
 
@@ -69,9 +69,13 @@ Nếu Rework / Hold, việc cần làm tiếp: <<>>
 
 ## 8. Ghi chú cá nhân
 
-- **Dùng AI để làm bài** (công cụ nào, việc gì, kiểm tra thế nào; "không dùng" nếu không): <<>>
-- Gold có bị nhiễm không (bạn có nhìn pre-label hay hỏi AI trước khi gán xong)? <<không / có, như sau: ...>>
-- Máy / GPU / CVAT dùng; vướng mắc cài đặt: <<>>
+- **Dùng AI để làm bài** (công cụ nào, việc gì, kiểm tra thế nào; "không dùng" nếu không): Claude Code (Anthropic). Phạm vi: giải thích khái niệm, đọc repo và guideline; dựng venv, tải model, nối git remote; tạo task CVAT `gold-manual` (#27) và `batch-review` (#28) rồi upload ảnh qua API; export COCO của gold qua API và chép vào `submission/labels/gold_manual.json`; chạy `validate_labels.py`. Kiểm tra: số ảnh và tên frame trong CVAT khớp thư mục `work/tasks/`; task `gold-manual` chỉ có box vẽ tay. AI không gán nhãn, không nhìn ảnh gold, không chạy model lên ảnh gold. Nhãn, số đo và kết luận do tôi tự làm.
+- Gold có bị nhiễm không (bạn có nhìn pre-label hay hỏi AI trước khi gán xong)? Không. Task `gold-manual` chỉ có box vẽ tay (CVAT ghi `source=manual` cho cả 67 box), không dùng Automatic annotation hay AI Tools, không chạy model và không xem pre-label của 4 ảnh gold trước khi export `gold_manual.json`. Có nhờ AI tóm tắt **văn bản** guideline v1.0 trước khi gán; không hỏi AI gì về nội dung ảnh.
+- Ca `can_review` trong gold (3 box, nguyên liệu cho calibration ở Part 6):
+  - `img_020`, 1 box `person`: <<không chắc quy tắc nào>>
+  - `img_020`, 1 box `three_wheeler`: <<không chắc quy tắc nào>>
+  - `img_036`, 1 box `person`: <<không chắc quy tắc nào>>
+- Máy / GPU / CVAT dùng; vướng mắc cài đặt: macOS, Apple M4, model chạy trên MPS; CVAT v2.74.1 chạy Docker ở cổng 8081 (giữ 2.74.1 thay vì 2.81.0 của hướng dẫn vì dùng chung dữ liệu với các lab khác). Vướng mắc: 17 container CVAT bị dừng (Exited 137) từ ngày 17/11, bật lại bằng `docker compose start`; ngay sau khi bật, trang Models báo lỗi 500 vài giây vì bộ kiểm tra quyền (OPA) chưa nạp xong, sau đó tự hết.
 - Dùng cache `data/cache/` thay vì tự chạy? <<không / có, vì ...>>
 - Lỗi / bug script đã gặp (nếu có): <<>>
 - Một điều bạn làm khác lần sau: <<>>
