@@ -5,7 +5,7 @@
 - Lớp (L2 / L3 / khác): L2
 - Tài khoản GitHub: tinhne
 - Repo bài nộp (URL): https://github.com/tinhne/K5-L2A-DAY08-2A202603145-LeVanTrungTinh-AIPrelabel
-- Commit chốt bài (hash): chưa commit chốt
+- Commit chốt bài (hash): 7eb93ef
 - Máy: macOS, Apple M4, MPS (chạy model trên GPU của Mac)
 - CVAT (Docker): v2.74.1
 
