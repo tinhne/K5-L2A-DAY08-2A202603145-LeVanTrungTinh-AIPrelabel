@@ -89,4 +89,4 @@ kiểm tra cấu trúc; nhãn gold và review batch được thực hiện trên
 Gold được gán trước khi xem pre-label. Máy dùng macOS Apple M4, CVAT
 v2.74.1, model chạy MPS; riêng SAM 2.1 phải chuyển CPU do lỗi tương thích
 MPS. Lần sau sẽ dành thêm thời gian cho bước quét ảnh độc lập và review các
-bẫy trước khi export.
+bẫy trước khi export. Tự chạy test từng model để phân biết sự khác nhau giữa đầu ra các model, chỉ số conf tác động thế nào, build tool tích hợp cvat để auto pre-label.
